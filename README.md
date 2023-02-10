@@ -8,6 +8,6 @@
 - [PostMan_Env](https://github.com/MaksimTupitsyn/RestFul_Booker/blob/main/Restful_Booker.postman_environment.json)
 - [Test_Run_Complete](http://178.124.206.46:8000/index.php?/runs/view/2122&group_by=cases:section_id&group_order=asc)--
 [Test_Run_Smoke](http://178.124.206.46:8000/index.php?/runs/view/2121&group_by=cases:section_id&group_order=asc)
-- [Test_Result_Report_Smoke]--[Test_result_Report_Complete]()
+- [Test_Result_Report_Smoke]--[Test_result_Report_Complete](https://github.com/MaksimTupitsyn/RestFul_Booker/blob/main/Test%20Result%20Report_Tupitsyn_Maksim!.pptx)
 - [Jmeter cases](https://github.com/MaksimTupitsyn/RestFul_Booker/blob/main/Jmeter_restful_booker.jmx)
 - [Bug_Report1](https://jr.it-academy.by/browse/GLDST4022-299)--[Bug_Report2](https://jr.it-academy.by/browse/GLDST4022-300)
