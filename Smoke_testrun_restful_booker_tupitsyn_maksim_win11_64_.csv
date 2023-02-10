@@ -1,0 +1,2535 @@
+﻿sep=,
+"ID","Title","Assigned To","Automation Type","Case ID","Comment","Defects","Elapsed","Estimate","Expected Result","Forecast","Goals","In Progress","Mission","Plan","Plan ID","Preconditions","Priority","References","Run","Run Configuration","Run ID","Section","Section Depth","Section Description","Section Hierarchy","Status","Steps","Steps","Steps","Steps (Actual Result)","Steps (Expected Result)","Steps (Expected Result)","Steps (Status)","Steps (Step)","Steps (Step)","Template","Tested By","Tested On","Type","Version"
+"T297758","Доступность и работоспособность API(PING)","Тупицын Максим"," None","C148648","","","44s","","","","","","","","","Postman запущен
+Метод GET
+URL https://restful-booker.herokuapp.com/ping","Smoke","","SMOKE_TEST_RestFul_Booker_Tupitsyn_Maksim(Win11/64)","","R2121","PING","0","","PING","Passed","","1. SEND
+Expected Result:
+Responce BODY:
+Created
+
+REsponce Headers:
+Server--Cowboy
+Content-Type--text/plain; charset=utf-8
+
+Status code is 201
+
+Response time is less than 1000ms","1. SEND
+---
+Responce BODY:
+Created
+
+REsponce Headers:
+Server--Cowboy
+Content-Type--text/plain; charset=utf-8
+
+Status code is 201
+
+Response time is less than 1000ms
+---
+![](index.php?/attachments/get/13964)
+---
+Passed","1. ![](index.php?/attachments/get/13964)","1. Responce BODY:
+Created
+
+REsponce Headers:
+Server--Cowboy
+Content-Type--text/plain; charset=utf-8
+
+Status code is 201
+
+Response time is less than 1000ms","1. Responce BODY:
+Created
+
+REsponce Headers:
+Server--Cowboy
+Content-Type--text/plain; charset=utf-8
+
+Status code is 201
+
+Response time is less than 1000ms","1. Passed","1. SEND","1. SEND","Test Case (Steps)","Тупицын Максим","2/10/2023 9:39 AM","Other","1.0"
+"T297757","Создание нового токена авторизации для доступа к PUT и DELETE  бронирования(Валидные данные)","Тупицын Максим"," None","C148647","","","82s","","","","","","","","","Postman запущен
+Метод POST
+URL https://restful-booker.herokuapp.com/auth 
+Request Headers
+Key- 'Content-Type'
+Value- 'application/json'","Smoke","","SMOKE_TEST_RestFul_Booker_Tupitsyn_Maksim(Win11/64)","","R2121","Positive_Authorization","1","","Security/Authorization > Positive_Authorization","Passed","","1. Request Body
+{
+""username"":""admin"" ,
+""password"":""password123""
+}
+2. SEND
+
+Expected Result:
+Responce BODY:
+{
+    ""token"": {{token}} 
+}
+
+REsponce Headers:-
+Server:Cowboy
+Content-Type:application/json; charset=utf-8
+
+Status code is 200
+
+Response time is less than 1000ms
+
+Response contains token
+
+JSON values are correct types","1. Request Body
+{
+""username"":""admin"" ,
+""password"":""password123""
+}
+---
+![](index.php?/attachments/get/13965)
+---
+Passed
+2. SEND
+
+---
+Responce BODY:
+{
+    ""token"": {{token}} 
+}
+
+REsponce Headers:-
+Server:Cowboy
+Content-Type:application/json; charset=utf-8
+
+Status code is 200
+
+Response time is less than 1000ms
+
+Response contains token
+
+JSON values are correct types
+---
+![](index.php?/attachments/get/13966)
+---
+Passed","1. ![](index.php?/attachments/get/13965)
+2. ![](index.php?/attachments/get/13966)","1. 
+2. Responce BODY:
+{
+    ""token"": {{token}} 
+}
+
+REsponce Headers:-
+Server:Cowboy
+Content-Type:application/json; charset=utf-8
+
+Status code is 200
+
+Response time is less than 1000ms
+
+Response contains token
+
+JSON values are correct types","1. 
+2. Responce BODY:
+{
+    ""token"": {{token}} 
+}
+
+REsponce Headers:-
+Server:Cowboy
+Content-Type:application/json; charset=utf-8
+
+Status code is 200
+
+Response time is less than 1000ms
+
+Response contains token
+
+JSON values are correct types","1. Passed
+2. Passed","1. Request Body
+{
+""username"":""admin"" ,
+""password"":""password123""
+}
+2. SEND","1. Request Body
+{
+""username"":""admin"" ,
+""password"":""password123""
+}
+2. SEND","Test Case (Steps)","Тупицын Максим","2/10/2023 9:41 AM","Other","1.0"
+"T297752","Создать новое бронирование в API","Тупицын Максим"," None","C148642","","","159s","","","","","","","","","Postman запущен
+Метод POST
+URL https://restful-booker.herokuapp.com/booking
+Headers: 
+Key 'Content-Type' Value 'application/json'
+Key 'Accept' Value 'application/json'
+************
+Responce body {{bookingId}},//(Запоминаем данное значение для дальнейшей работы)","Smoke","","SMOKE_TEST_RestFul_Booker_Tupitsyn_Maksim(Win11/64)","","R2121","Create_Booking(POST)","0","","Create_Booking(POST)","Passed","","1. Request Body:(Латинские символы)
+{
+    ""firstname"" : ""Maksim"",
+    ""lastname"" : ""Tupitsyn"",
+    ""totalprice"" : 177,
+    ""depositpaid"" : true,
+    ""bookingdates"" : {
+        ""checkin"" : ""2022-01-23"",
+        ""checkout"" : ""2023-01-23""
+    },
+    ""additionalneeds"" : ""Lunch""
+}
+
+SEND
+Expected Result:
+Responce BODY:
+{
+    ""bookingid"": {{bookingId}},
+    ""booking"": {
+        ""firstname"": ""Maksim"",
+        ""lastname"": ""Tupitsyn"",
+        ""totalprice"": 177,
+        ""depositpaid"": true,
+        ""bookingdates"": {
+            ""checkin"": ""2022-01-23"",
+            ""checkout"": ""2023-01-23""
+        },
+        ""additionalneeds"": ""Lunch""
+    }
+
+
+REsponce Headers:-
+Server:Cowboy
+Content-Type:application/json; charset=utf-8
+
+
+Status code is 200
+
+Header Server is Cowboy
+
+Header Content-Type is present
+
+Response body is a JSON
+
+Response schema is correct
+
+JSON values are correct types
+
+Response time is less than 1000ms
+2. Проверяем созданную запись
+Метод GET
+URL https://restful-booker.herokuapp.com/booking/{{bookingid}}
+
+SEND
+
+Expected Result:
+Responce BODY:
+{
+    ""firstname"": ""Maksim"",
+    ""lastname"": ""Tupitsyn"",
+    ""totalprice"": 177,
+    ""depositpaid"": true,
+    ""bookingdates"": {
+        ""checkin"": ""2022-01-23"",
+        ""checkout"": ""2023-01-23""
+    },
+    ""additionalneeds"": ""Lunch""
+}
+REsponce Headers:-
+Server:Cowboy
+Content-Type:application/json; charset=utf-8
+
+Status code is 200
+
+Header Server is Cowboy
+
+Header Content-Type is present
+
+Response is a JSON
+
+Response schema is correct
+
+JSON values are correct types
+
+Check if lastname is Tupitsyn
+
+Body is correct
+
+Response time is less than 1000ms
+3. Request Body:(Русские символы)
+{
+    ""firstname"" : ""Максим"",
+    ""lastname"" : ""Тупицын"",
+    ""totalprice"" : 1,
+    ""depositpaid"" : true,
+    ""bookingdates"" : {
+        ""checkin"" : ""2022-01-23"",
+        ""checkout"" : ""2023-01-23""
+    },
+    ""additionalneeds"" : ""Lunch""
+}
+
+SEND
+Expected Result:
+Responce BODY:
+{
+    ""bookingid"": {{bookingId}},
+    ""booking"": {
+        ""firstname"": ""Максим"",
+        ""lastname"": ""Тупицын"",
+        ""totalprice"": 1,
+        ""depositpaid"": true,
+        ""bookingdates"": {
+            ""checkin"": ""2022-01-23"",
+            ""checkout"": ""2023-01-23""
+        },
+        ""additionalneeds"": ""Lunch""
+    }
+
+
+REsponce Headers:-
+Server:Cowboy
+Content-Type:application/json; charset=utf-8
+
+
+Status code is 200
+
+Header Server is Cowboy
+
+Header Content-Type is present
+
+Response body is a JSON
+
+Response schema is correct
+
+JSON values are correct types
+
+Response time is less than 1000ms
+4. Проверяем созданную запись
+Метод GET
+URL https://restful-booker.herokuapp.com/booking/{{bookingid}}
+
+SEND
+Expected Result:
+Responce BODY:
+{
+    ""firstname"": ""Максим"",
+    ""lastname"": ""Тупицын"",
+    ""totalprice"": 177,
+    ""depositpaid"": true,
+    ""bookingdates"": {
+        ""checkin"": ""2022-01-23"",
+        ""checkout"": ""2023-01-23""
+    },
+    ""additionalneeds"": ""Lunch""
+}
+REsponce Headers:-
+Server:Cowboy
+Content-Type:application/json; charset=utf-8
+
+Status code is 200
+
+Header Server is Cowboy
+
+Header Content-Type is present
+
+Response is a JSON
+
+Response schema is correct
+
+JSON values are correct types
+
+Check if lastname is Tupitsyn
+
+Body is correct
+
+Response time is less than 1000ms
+5. Request Body:(иероглифы)
+{
+    ""firstname"" : ""中國皮卡丘"",
+    ""lastname"" : ""日本のピカチュウ"",
+    ""totalprice"" : 1,
+    ""depositpaid"" : true,
+    ""bookingdates"" : {
+        ""checkin"" : ""2022-01-23"",
+        ""checkout"" : ""2023-01-23""
+    },
+    ""additionalneeds"" : ""Lunch""
+}
+
+SEND
+
+
+Expected Result:
+Responce BODY:
+{
+    ""bookingid"": {{bookingId}},
+    ""booking"": {
+        ""firstname"": ""中國皮卡丘"",
+        ""lastname"": ""日本のピカチュウ"",
+        ""totalprice"": 1,
+        ""depositpaid"": true,
+        ""bookingdates"": {
+            ""checkin"": ""2022-01-23"",
+            ""checkout"": ""2023-01-23""
+        },
+        ""additionalneeds"": ""Lunch""
+    }
+
+
+REsponce Headers:-
+Server:Cowboy
+Content-Type:application/json; charset=utf-8
+
+
+Status code is 200
+
+Header Server is Cowboy
+
+Header Content-Type is present
+
+Response body is a JSON
+
+Response schema is correct
+
+JSON values are correct types
+
+Response time is less than 1000ms
+6. Проверяем созданную запись
+Метод GET
+URL https://restful-booker.herokuapp.com/booking/{{bookingid}}
+
+SEND
+Expected Result:
+Responce BODY:
+{
+    ""bookingid"": {{bookingId}},
+    ""booking"": {
+        ""firstname"": ""中國皮卡丘"",
+        ""lastname"": ""日本のピカチュウ"",
+        ""totalprice"": 1,
+        ""depositpaid"": true,
+        ""bookingdates"": {
+            ""checkin"": ""2022-01-23"",
+            ""checkout"": ""2023-01-23""
+        },
+        ""additionalneeds"": ""Lunch""
+    }
+
+REsponce Headers:-
+Server:Cowboy
+Content-Type:application/json; charset=utf-8
+
+
+Status code is 200
+
+Header Server is Cowboy
+
+Header Content-Type is present
+
+Response body is a JSON
+
+Response schema is correct
+
+JSON values are correct types
+
+Response time is less than 1000ms","1. Request Body:(Латинские символы)
+{
+    ""firstname"" : ""Maksim"",
+    ""lastname"" : ""Tupitsyn"",
+    ""totalprice"" : 177,
+    ""depositpaid"" : true,
+    ""bookingdates"" : {
+        ""checkin"" : ""2022-01-23"",
+        ""checkout"" : ""2023-01-23""
+    },
+    ""additionalneeds"" : ""Lunch""
+}
+
+SEND
+---
+Responce BODY:
+{
+    ""bookingid"": {{bookingId}},
+    ""booking"": {
+        ""firstname"": ""Maksim"",
+        ""lastname"": ""Tupitsyn"",
+        ""totalprice"": 177,
+        ""depositpaid"": true,
+        ""bookingdates"": {
+            ""checkin"": ""2022-01-23"",
+            ""checkout"": ""2023-01-23""
+        },
+        ""additionalneeds"": ""Lunch""
+    }
+
+
+REsponce Headers:-
+Server:Cowboy
+Content-Type:application/json; charset=utf-8
+
+
+Status code is 200
+
+Header Server is Cowboy
+
+Header Content-Type is present
+
+Response body is a JSON
+
+Response schema is correct
+
+JSON values are correct types
+
+Response time is less than 1000ms
+---
+Passed
+2. Проверяем созданную запись
+Метод GET
+URL https://restful-booker.herokuapp.com/booking/{{bookingid}}
+
+SEND
+
+---
+Responce BODY:
+{
+    ""firstname"": ""Maksim"",
+    ""lastname"": ""Tupitsyn"",
+    ""totalprice"": 177,
+    ""depositpaid"": true,
+    ""bookingdates"": {
+        ""checkin"": ""2022-01-23"",
+        ""checkout"": ""2023-01-23""
+    },
+    ""additionalneeds"": ""Lunch""
+}
+REsponce Headers:-
+Server:Cowboy
+Content-Type:application/json; charset=utf-8
+
+Status code is 200
+
+Header Server is Cowboy
+
+Header Content-Type is present
+
+Response is a JSON
+
+Response schema is correct
+
+JSON values are correct types
+
+Check if lastname is Tupitsyn
+
+Body is correct
+
+Response time is less than 1000ms
+---
+Passed
+3. Request Body:(Русские символы)
+{
+    ""firstname"" : ""Максим"",
+    ""lastname"" : ""Тупицын"",
+    ""totalprice"" : 1,
+    ""depositpaid"" : true,
+    ""bookingdates"" : {
+        ""checkin"" : ""2022-01-23"",
+        ""checkout"" : ""2023-01-23""
+    },
+    ""additionalneeds"" : ""Lunch""
+}
+
+SEND
+---
+Responce BODY:
+{
+    ""bookingid"": {{bookingId}},
+    ""booking"": {
+        ""firstname"": ""Максим"",
+        ""lastname"": ""Тупицын"",
+        ""totalprice"": 1,
+        ""depositpaid"": true,
+        ""bookingdates"": {
+            ""checkin"": ""2022-01-23"",
+            ""checkout"": ""2023-01-23""
+        },
+        ""additionalneeds"": ""Lunch""
+    }
+
+
+REsponce Headers:-
+Server:Cowboy
+Content-Type:application/json; charset=utf-8
+
+
+Status code is 200
+
+Header Server is Cowboy
+
+Header Content-Type is present
+
+Response body is a JSON
+
+Response schema is correct
+
+JSON values are correct types
+
+Response time is less than 1000ms
+---
+Passed
+4. Проверяем созданную запись
+Метод GET
+URL https://restful-booker.herokuapp.com/booking/{{bookingid}}
+
+SEND
+---
+Responce BODY:
+{
+    ""firstname"": ""Максим"",
+    ""lastname"": ""Тупицын"",
+    ""totalprice"": 177,
+    ""depositpaid"": true,
+    ""bookingdates"": {
+        ""checkin"": ""2022-01-23"",
+        ""checkout"": ""2023-01-23""
+    },
+    ""additionalneeds"": ""Lunch""
+}
+REsponce Headers:-
+Server:Cowboy
+Content-Type:application/json; charset=utf-8
+
+Status code is 200
+
+Header Server is Cowboy
+
+Header Content-Type is present
+
+Response is a JSON
+
+Response schema is correct
+
+JSON values are correct types
+
+Check if lastname is Tupitsyn
+
+Body is correct
+
+Response time is less than 1000ms
+---
+Passed
+5. Request Body:(иероглифы)
+{
+    ""firstname"" : ""中國皮卡丘"",
+    ""lastname"" : ""日本のピカチュウ"",
+    ""totalprice"" : 1,
+    ""depositpaid"" : true,
+    ""bookingdates"" : {
+        ""checkin"" : ""2022-01-23"",
+        ""checkout"" : ""2023-01-23""
+    },
+    ""additionalneeds"" : ""Lunch""
+}
+
+SEND
+
+
+---
+Responce BODY:
+{
+    ""bookingid"": {{bookingId}},
+    ""booking"": {
+        ""firstname"": ""中國皮卡丘"",
+        ""lastname"": ""日本のピカチュウ"",
+        ""totalprice"": 1,
+        ""depositpaid"": true,
+        ""bookingdates"": {
+            ""checkin"": ""2022-01-23"",
+            ""checkout"": ""2023-01-23""
+        },
+        ""additionalneeds"": ""Lunch""
+    }
+
+
+REsponce Headers:-
+Server:Cowboy
+Content-Type:application/json; charset=utf-8
+
+
+Status code is 200
+
+Header Server is Cowboy
+
+Header Content-Type is present
+
+Response body is a JSON
+
+Response schema is correct
+
+JSON values are correct types
+
+Response time is less than 1000ms
+---
+Passed
+6. Проверяем созданную запись
+Метод GET
+URL https://restful-booker.herokuapp.com/booking/{{bookingid}}
+
+SEND
+---
+Responce BODY:
+{
+    ""bookingid"": {{bookingId}},
+    ""booking"": {
+        ""firstname"": ""中國皮卡丘"",
+        ""lastname"": ""日本のピカチュウ"",
+        ""totalprice"": 1,
+        ""depositpaid"": true,
+        ""bookingdates"": {
+            ""checkin"": ""2022-01-23"",
+            ""checkout"": ""2023-01-23""
+        },
+        ""additionalneeds"": ""Lunch""
+    }
+
+REsponce Headers:-
+Server:Cowboy
+Content-Type:application/json; charset=utf-8
+
+
+Status code is 200
+
+Header Server is Cowboy
+
+Header Content-Type is present
+
+Response body is a JSON
+
+Response schema is correct
+
+JSON values are correct types
+
+Response time is less than 1000ms
+---
+Untested","1. 
+2. 
+3. 
+4. 
+5. 
+6.","1. Responce BODY:
+{
+    ""bookingid"": {{bookingId}},
+    ""booking"": {
+        ""firstname"": ""Maksim"",
+        ""lastname"": ""Tupitsyn"",
+        ""totalprice"": 177,
+        ""depositpaid"": true,
+        ""bookingdates"": {
+            ""checkin"": ""2022-01-23"",
+            ""checkout"": ""2023-01-23""
+        },
+        ""additionalneeds"": ""Lunch""
+    }
+
+
+REsponce Headers:-
+Server:Cowboy
+Content-Type:application/json; charset=utf-8
+
+
+Status code is 200
+
+Header Server is Cowboy
+
+Header Content-Type is present
+
+Response body is a JSON
+
+Response schema is correct
+
+JSON values are correct types
+
+Response time is less than 1000ms
+2. Responce BODY:
+{
+    ""firstname"": ""Maksim"",
+    ""lastname"": ""Tupitsyn"",
+    ""totalprice"": 177,
+    ""depositpaid"": true,
+    ""bookingdates"": {
+        ""checkin"": ""2022-01-23"",
+        ""checkout"": ""2023-01-23""
+    },
+    ""additionalneeds"": ""Lunch""
+}
+REsponce Headers:-
+Server:Cowboy
+Content-Type:application/json; charset=utf-8
+
+Status code is 200
+
+Header Server is Cowboy
+
+Header Content-Type is present
+
+Response is a JSON
+
+Response schema is correct
+
+JSON values are correct types
+
+Check if lastname is Tupitsyn
+
+Body is correct
+
+Response time is less than 1000ms
+3. Responce BODY:
+{
+    ""bookingid"": {{bookingId}},
+    ""booking"": {
+        ""firstname"": ""Максим"",
+        ""lastname"": ""Тупицын"",
+        ""totalprice"": 1,
+        ""depositpaid"": true,
+        ""bookingdates"": {
+            ""checkin"": ""2022-01-23"",
+            ""checkout"": ""2023-01-23""
+        },
+        ""additionalneeds"": ""Lunch""
+    }
+
+
+REsponce Headers:-
+Server:Cowboy
+Content-Type:application/json; charset=utf-8
+
+
+Status code is 200
+
+Header Server is Cowboy
+
+Header Content-Type is present
+
+Response body is a JSON
+
+Response schema is correct
+
+JSON values are correct types
+
+Response time is less than 1000ms
+4. Responce BODY:
+{
+    ""firstname"": ""Максим"",
+    ""lastname"": ""Тупицын"",
+    ""totalprice"": 177,
+    ""depositpaid"": true,
+    ""bookingdates"": {
+        ""checkin"": ""2022-01-23"",
+        ""checkout"": ""2023-01-23""
+    },
+    ""additionalneeds"": ""Lunch""
+}
+REsponce Headers:-
+Server:Cowboy
+Content-Type:application/json; charset=utf-8
+
+Status code is 200
+
+Header Server is Cowboy
+
+Header Content-Type is present
+
+Response is a JSON
+
+Response schema is correct
+
+JSON values are correct types
+
+Check if lastname is Tupitsyn
+
+Body is correct
+
+Response time is less than 1000ms
+5. Responce BODY:
+{
+    ""bookingid"": {{bookingId}},
+    ""booking"": {
+        ""firstname"": ""中國皮卡丘"",
+        ""lastname"": ""日本のピカチュウ"",
+        ""totalprice"": 1,
+        ""depositpaid"": true,
+        ""bookingdates"": {
+            ""checkin"": ""2022-01-23"",
+            ""checkout"": ""2023-01-23""
+        },
+        ""additionalneeds"": ""Lunch""
+    }
+
+
+REsponce Headers:-
+Server:Cowboy
+Content-Type:application/json; charset=utf-8
+
+
+Status code is 200
+
+Header Server is Cowboy
+
+Header Content-Type is present
+
+Response body is a JSON
+
+Response schema is correct
+
+JSON values are correct types
+
+Response time is less than 1000ms
+6. Responce BODY:
+{
+    ""bookingid"": {{bookingId}},
+    ""booking"": {
+        ""firstname"": ""中國皮卡丘"",
+        ""lastname"": ""日本のピカチュウ"",
+        ""totalprice"": 1,
+        ""depositpaid"": true,
+        ""bookingdates"": {
+            ""checkin"": ""2022-01-23"",
+            ""checkout"": ""2023-01-23""
+        },
+        ""additionalneeds"": ""Lunch""
+    }
+
+REsponce Headers:-
+Server:Cowboy
+Content-Type:application/json; charset=utf-8
+
+
+Status code is 200
+
+Header Server is Cowboy
+
+Header Content-Type is present
+
+Response body is a JSON
+
+Response schema is correct
+
+JSON values are correct types
+
+Response time is less than 1000ms","1. Responce BODY:
+{
+    ""bookingid"": {{bookingId}},
+    ""booking"": {
+        ""firstname"": ""Maksim"",
+        ""lastname"": ""Tupitsyn"",
+        ""totalprice"": 177,
+        ""depositpaid"": true,
+        ""bookingdates"": {
+            ""checkin"": ""2022-01-23"",
+            ""checkout"": ""2023-01-23""
+        },
+        ""additionalneeds"": ""Lunch""
+    }
+
+
+REsponce Headers:-
+Server:Cowboy
+Content-Type:application/json; charset=utf-8
+
+
+Status code is 200
+
+Header Server is Cowboy
+
+Header Content-Type is present
+
+Response body is a JSON
+
+Response schema is correct
+
+JSON values are correct types
+
+Response time is less than 1000ms
+2. Responce BODY:
+{
+    ""firstname"": ""Maksim"",
+    ""lastname"": ""Tupitsyn"",
+    ""totalprice"": 177,
+    ""depositpaid"": true,
+    ""bookingdates"": {
+        ""checkin"": ""2022-01-23"",
+        ""checkout"": ""2023-01-23""
+    },
+    ""additionalneeds"": ""Lunch""
+}
+REsponce Headers:-
+Server:Cowboy
+Content-Type:application/json; charset=utf-8
+
+Status code is 200
+
+Header Server is Cowboy
+
+Header Content-Type is present
+
+Response is a JSON
+
+Response schema is correct
+
+JSON values are correct types
+
+Check if lastname is Tupitsyn
+
+Body is correct
+
+Response time is less than 1000ms
+3. Responce BODY:
+{
+    ""bookingid"": {{bookingId}},
+    ""booking"": {
+        ""firstname"": ""Максим"",
+        ""lastname"": ""Тупицын"",
+        ""totalprice"": 1,
+        ""depositpaid"": true,
+        ""bookingdates"": {
+            ""checkin"": ""2022-01-23"",
+            ""checkout"": ""2023-01-23""
+        },
+        ""additionalneeds"": ""Lunch""
+    }
+
+
+REsponce Headers:-
+Server:Cowboy
+Content-Type:application/json; charset=utf-8
+
+
+Status code is 200
+
+Header Server is Cowboy
+
+Header Content-Type is present
+
+Response body is a JSON
+
+Response schema is correct
+
+JSON values are correct types
+
+Response time is less than 1000ms
+4. Responce BODY:
+{
+    ""firstname"": ""Максим"",
+    ""lastname"": ""Тупицын"",
+    ""totalprice"": 177,
+    ""depositpaid"": true,
+    ""bookingdates"": {
+        ""checkin"": ""2022-01-23"",
+        ""checkout"": ""2023-01-23""
+    },
+    ""additionalneeds"": ""Lunch""
+}
+REsponce Headers:-
+Server:Cowboy
+Content-Type:application/json; charset=utf-8
+
+Status code is 200
+
+Header Server is Cowboy
+
+Header Content-Type is present
+
+Response is a JSON
+
+Response schema is correct
+
+JSON values are correct types
+
+Check if lastname is Tupitsyn
+
+Body is correct
+
+Response time is less than 1000ms
+5. Responce BODY:
+{
+    ""bookingid"": {{bookingId}},
+    ""booking"": {
+        ""firstname"": ""中國皮卡丘"",
+        ""lastname"": ""日本のピカチュウ"",
+        ""totalprice"": 1,
+        ""depositpaid"": true,
+        ""bookingdates"": {
+            ""checkin"": ""2022-01-23"",
+            ""checkout"": ""2023-01-23""
+        },
+        ""additionalneeds"": ""Lunch""
+    }
+
+
+REsponce Headers:-
+Server:Cowboy
+Content-Type:application/json; charset=utf-8
+
+
+Status code is 200
+
+Header Server is Cowboy
+
+Header Content-Type is present
+
+Response body is a JSON
+
+Response schema is correct
+
+JSON values are correct types
+
+Response time is less than 1000ms
+6. Responce BODY:
+{
+    ""bookingid"": {{bookingId}},
+    ""booking"": {
+        ""firstname"": ""中國皮卡丘"",
+        ""lastname"": ""日本のピカチュウ"",
+        ""totalprice"": 1,
+        ""depositpaid"": true,
+        ""bookingdates"": {
+            ""checkin"": ""2022-01-23"",
+            ""checkout"": ""2023-01-23""
+        },
+        ""additionalneeds"": ""Lunch""
+    }
+
+REsponce Headers:-
+Server:Cowboy
+Content-Type:application/json; charset=utf-8
+
+
+Status code is 200
+
+Header Server is Cowboy
+
+Header Content-Type is present
+
+Response body is a JSON
+
+Response schema is correct
+
+JSON values are correct types
+
+Response time is less than 1000ms","1. Passed
+2. Passed
+3. Passed
+4. Passed
+5. Passed
+6. Untested","1. Request Body:(Латинские символы)
+{
+    ""firstname"" : ""Maksim"",
+    ""lastname"" : ""Tupitsyn"",
+    ""totalprice"" : 177,
+    ""depositpaid"" : true,
+    ""bookingdates"" : {
+        ""checkin"" : ""2022-01-23"",
+        ""checkout"" : ""2023-01-23""
+    },
+    ""additionalneeds"" : ""Lunch""
+}
+
+SEND
+2. Проверяем созданную запись
+Метод GET
+URL https://restful-booker.herokuapp.com/booking/{{bookingid}}
+
+SEND
+
+3. Request Body:(Русские символы)
+{
+    ""firstname"" : ""Максим"",
+    ""lastname"" : ""Тупицын"",
+    ""totalprice"" : 1,
+    ""depositpaid"" : true,
+    ""bookingdates"" : {
+        ""checkin"" : ""2022-01-23"",
+        ""checkout"" : ""2023-01-23""
+    },
+    ""additionalneeds"" : ""Lunch""
+}
+
+SEND
+4. Проверяем созданную запись
+Метод GET
+URL https://restful-booker.herokuapp.com/booking/{{bookingid}}
+
+SEND
+5. Request Body:(иероглифы)
+{
+    ""firstname"" : ""中國皮卡丘"",
+    ""lastname"" : ""日本のピカチュウ"",
+    ""totalprice"" : 1,
+    ""depositpaid"" : true,
+    ""bookingdates"" : {
+        ""checkin"" : ""2022-01-23"",
+        ""checkout"" : ""2023-01-23""
+    },
+    ""additionalneeds"" : ""Lunch""
+}
+
+SEND
+
+
+6. Проверяем созданную запись
+Метод GET
+URL https://restful-booker.herokuapp.com/booking/{{bookingid}}
+
+SEND","1. Request Body:(Латинские символы)
+{
+    ""firstname"" : ""Maksim"",
+    ""lastname"" : ""Tupitsyn"",
+    ""totalprice"" : 177,
+    ""depositpaid"" : true,
+    ""bookingdates"" : {
+        ""checkin"" : ""2022-01-23"",
+        ""checkout"" : ""2023-01-23""
+    },
+    ""additionalneeds"" : ""Lunch""
+}
+
+SEND
+2. Проверяем созданную запись
+Метод GET
+URL https://restful-booker.herokuapp.com/booking/{{bookingid}}
+
+SEND
+
+3. Request Body:(Русские символы)
+{
+    ""firstname"" : ""Максим"",
+    ""lastname"" : ""Тупицын"",
+    ""totalprice"" : 1,
+    ""depositpaid"" : true,
+    ""bookingdates"" : {
+        ""checkin"" : ""2022-01-23"",
+        ""checkout"" : ""2023-01-23""
+    },
+    ""additionalneeds"" : ""Lunch""
+}
+
+SEND
+4. Проверяем созданную запись
+Метод GET
+URL https://restful-booker.herokuapp.com/booking/{{bookingid}}
+
+SEND
+5. Request Body:(иероглифы)
+{
+    ""firstname"" : ""中國皮卡丘"",
+    ""lastname"" : ""日本のピカチュウ"",
+    ""totalprice"" : 1,
+    ""depositpaid"" : true,
+    ""bookingdates"" : {
+        ""checkin"" : ""2022-01-23"",
+        ""checkout"" : ""2023-01-23""
+    },
+    ""additionalneeds"" : ""Lunch""
+}
+
+SEND
+
+
+6. Проверяем созданную запись
+Метод GET
+URL https://restful-booker.herokuapp.com/booking/{{bookingid}}
+
+SEND","Test Case (Steps)","Тупицын Максим","2/10/2023 9:44 AM","Other","1.0"
+"T297748","Вернуть идентификаторы всех бронирований, существующих в API","Тупицын Максим"," None","C148638","","","57s","","","","","","","","","Postman запущен
+Метод GET
+URL https://restful-booker.herokuapp.com/booking","Smoke","","SMOKE_TEST_RestFul_Booker_Tupitsyn_Maksim(Win11/64)","","R2121","Get_Booking(GET)","0","","Get_Booking(GET)","Passed","","1. SEND
+Expected Result:
+Responce BODY:
+ [
+    {
+        ""bookingid"": 106
+    },
+    {
+        ""bookingid"": 66
+    }, 
+
+
+ {
+        ""bookingid"": 13
+    },
+//и так далее выводятся все доступные ID
+]
+REsponce Headers: 
+Server--Cowboy
+Content-Type--application/json; charset=utf-8
+Status code is 200
+Response body is a JSON
+JSON value is a number
+Response time is less than 1000ms","1. SEND
+---
+Responce BODY:
+ [
+    {
+        ""bookingid"": 106
+    },
+    {
+        ""bookingid"": 66
+    }, 
+
+
+ {
+        ""bookingid"": 13
+    },
+//и так далее выводятся все доступные ID
+]
+REsponce Headers: 
+Server--Cowboy
+Content-Type--application/json; charset=utf-8
+Status code is 200
+Response body is a JSON
+JSON value is a number
+Response time is less than 1000ms
+---
+![](index.php?/attachments/get/13967)
+---
+Passed","1. ![](index.php?/attachments/get/13967)","1. Responce BODY:
+ [
+    {
+        ""bookingid"": 106
+    },
+    {
+        ""bookingid"": 66
+    }, 
+
+
+ {
+        ""bookingid"": 13
+    },
+//и так далее выводятся все доступные ID
+]
+REsponce Headers: 
+Server--Cowboy
+Content-Type--application/json; charset=utf-8
+Status code is 200
+Response body is a JSON
+JSON value is a number
+Response time is less than 1000ms","1. Responce BODY:
+ [
+    {
+        ""bookingid"": 106
+    },
+    {
+        ""bookingid"": 66
+    }, 
+
+
+ {
+        ""bookingid"": 13
+    },
+//и так далее выводятся все доступные ID
+]
+REsponce Headers: 
+Server--Cowboy
+Content-Type--application/json; charset=utf-8
+Status code is 200
+Response body is a JSON
+JSON value is a number
+Response time is less than 1000ms","1. Passed","1. SEND","1. SEND","Test Case (Steps)","Тупицын Максим","2/10/2023 9:46 AM","Other","1.0"
+"T297749","Вернуть  бронирование, по конкретному ID","Тупицын Максим"," None","C148639","","","40s","","","","","","","","","Postman запущен
+Метод GET
+URL https://restful-booker.herokuapp.com/booking/{{bookingId}} (где bookingId равен значению , которое мы получили при создании бронирования ранее)
+Request Headers: 
+Accept:application/json","Smoke","","SMOKE_TEST_RestFul_Booker_Tupitsyn_Maksim(Win11/64)","","R2121","Get_Booking(GET)","0","","Get_Booking(GET)","Passed","","1. SEND
+Expected Result:
+Responce BODY:
+{
+    ""firstname"": ""Maksim"",
+    ""lastname"": ""Tupitsyn"",
+    ""totalprice"": 177,
+    ""depositpaid"": true,
+    ""bookingdates"": {
+        ""checkin"": ""2022-01-23"",
+        ""checkout"": ""2023-01-23""
+    },
+    ""additionalneeds"": ""Lunch""
+}
+
+REsponce Headers:-
+Server:Cowboy
+Content-Type:application/json; charset=utf-8
+
+Status code is 200
+
+Header Server is Cowboy
+
+Header Content-Type is present
+
+Response is a JSON
+
+Response schema is correct
+
+JSON values are correct types
+
+Response time is less than 1000ms","1. SEND
+---
+Responce BODY:
+{
+    ""firstname"": ""Maksim"",
+    ""lastname"": ""Tupitsyn"",
+    ""totalprice"": 177,
+    ""depositpaid"": true,
+    ""bookingdates"": {
+        ""checkin"": ""2022-01-23"",
+        ""checkout"": ""2023-01-23""
+    },
+    ""additionalneeds"": ""Lunch""
+}
+
+REsponce Headers:-
+Server:Cowboy
+Content-Type:application/json; charset=utf-8
+
+Status code is 200
+
+Header Server is Cowboy
+
+Header Content-Type is present
+
+Response is a JSON
+
+Response schema is correct
+
+JSON values are correct types
+
+Response time is less than 1000ms
+---
+![](index.php?/attachments/get/13969)
+---
+Passed","1. ![](index.php?/attachments/get/13969)","1. Responce BODY:
+{
+    ""firstname"": ""Maksim"",
+    ""lastname"": ""Tupitsyn"",
+    ""totalprice"": 177,
+    ""depositpaid"": true,
+    ""bookingdates"": {
+        ""checkin"": ""2022-01-23"",
+        ""checkout"": ""2023-01-23""
+    },
+    ""additionalneeds"": ""Lunch""
+}
+
+REsponce Headers:-
+Server:Cowboy
+Content-Type:application/json; charset=utf-8
+
+Status code is 200
+
+Header Server is Cowboy
+
+Header Content-Type is present
+
+Response is a JSON
+
+Response schema is correct
+
+JSON values are correct types
+
+Response time is less than 1000ms","1. Responce BODY:
+{
+    ""firstname"": ""Maksim"",
+    ""lastname"": ""Tupitsyn"",
+    ""totalprice"": 177,
+    ""depositpaid"": true,
+    ""bookingdates"": {
+        ""checkin"": ""2022-01-23"",
+        ""checkout"": ""2023-01-23""
+    },
+    ""additionalneeds"": ""Lunch""
+}
+
+REsponce Headers:-
+Server:Cowboy
+Content-Type:application/json; charset=utf-8
+
+Status code is 200
+
+Header Server is Cowboy
+
+Header Content-Type is present
+
+Response is a JSON
+
+Response schema is correct
+
+JSON values are correct types
+
+Response time is less than 1000ms","1. Passed","1. SEND","1. SEND","Test Case (Steps)","Тупицын Максим","2/10/2023 9:48 AM","Other",""
+"T297750","Вернуть идентификаторы всех бронирований, существующих в API  c фильтром по Имени/Фамилии","Тупицын Максим"," None","C148640","","","42s","","","","","","","","","Postman запущен
+Метод GET
+URL https://restful-booker.herokuapp.com/booking?firstname={{FirstName}}&lastname={{LastName}}
+
+Request Params:
+firsname:{{FirstName}}--Maksim
+lastname{{LastName}}--Tupitsyn","Smoke","","SMOKE_TEST_RestFul_Booker_Tupitsyn_Maksim(Win11/64)","","R2121","Get_Booking(GET)","0","","Get_Booking(GET)","Passed","","1. SEND
+Expected Result:
+Responce BODY:
+[
+    {
+        ""bookingid"": {{bookingId}}
+    }
+]
+
+REsponce Headers:-
+Server:Cowboy
+Content-Type:application/json; charset=utf-8
+
+Status code is 200
+
+Header Server is Cowboy
+
+Header Content-Type is present
+
+Response body is a JSON
+
+JSON value is a number
+
+Response time is less than 1000ms","1. SEND
+---
+Responce BODY:
+[
+    {
+        ""bookingid"": {{bookingId}}
+    }
+]
+
+REsponce Headers:-
+Server:Cowboy
+Content-Type:application/json; charset=utf-8
+
+Status code is 200
+
+Header Server is Cowboy
+
+Header Content-Type is present
+
+Response body is a JSON
+
+JSON value is a number
+
+Response time is less than 1000ms
+---
+![](index.php?/attachments/get/13971)
+---
+Passed","1. ![](index.php?/attachments/get/13971)","1. Responce BODY:
+[
+    {
+        ""bookingid"": {{bookingId}}
+    }
+]
+
+REsponce Headers:-
+Server:Cowboy
+Content-Type:application/json; charset=utf-8
+
+Status code is 200
+
+Header Server is Cowboy
+
+Header Content-Type is present
+
+Response body is a JSON
+
+JSON value is a number
+
+Response time is less than 1000ms","1. Responce BODY:
+[
+    {
+        ""bookingid"": {{bookingId}}
+    }
+]
+
+REsponce Headers:-
+Server:Cowboy
+Content-Type:application/json; charset=utf-8
+
+Status code is 200
+
+Header Server is Cowboy
+
+Header Content-Type is present
+
+Response body is a JSON
+
+JSON value is a number
+
+Response time is less than 1000ms","1. Passed","1. SEND","1. SEND","Test Case (Steps)","Тупицын Максим","2/10/2023 9:50 AM","Other","1.0"
+"T297751","Вернуть идентификаторы всех бронирований, существующих в API c фильтром по Дате","Тупицын Максим"," None","C148641","Фильтр приводит к сортировке, которая не соответствует действительности. Возможно я неправильно понимаю , как он должен обрабатывать запрос, ввиду специфики самого сервиса. Рекомендуется уточнить алгоритм обработки.","","175s","","","","","","","","","Postman запущен
+Метод GET
+URL https://restful-booker.herokuapp.com/booking?checkin={{checkin}}&checkout={{checkout}}
+Request Params:
+checkin:{{checkin}}--2022-01-23
+checkout{{checkout}}--2023-01-23","Smoke","","SMOKE_TEST_RestFul_Booker_Tupitsyn_Maksim(Win11/64)","","R2121","Get_Booking(GET)","0","","Get_Booking(GET)","Failed","","1. SEND
+Expected Result:
+Responce BODY:
+[
+    {
+        ""bookingid"": '***'-- массив значений подходящих под указанный промежуток
+    }
+]
+
+REsponce Headers:-
+Server:Cowboy
+Content-Type:application/json; charset=utf-8
+
+Status code is 200
+
+Header Server is Cowboy
+
+Header Content-Type is present
+
+Response body is a JSON
+
+JSON value is a number
+
+Response time is less than 1000ms","1. SEND
+---
+Responce BODY:
+[
+    {
+        ""bookingid"": '***'-- массив значений подходящих под указанный промежуток
+    }
+]
+
+REsponce Headers:-
+Server:Cowboy
+Content-Type:application/json; charset=utf-8
+
+Status code is 200
+
+Header Server is Cowboy
+
+Header Content-Type is present
+
+Response body is a JSON
+
+JSON value is a number
+
+Response time is less than 1000ms
+
+---
+![](index.php?/attachments/get/13973)
+---
+Failed","1. ![](index.php?/attachments/get/13973)","1. Responce BODY:
+[
+    {
+        ""bookingid"": '***'-- массив значений подходящих под указанный промежуток
+    }
+]
+
+REsponce Headers:-
+Server:Cowboy
+Content-Type:application/json; charset=utf-8
+
+Status code is 200
+
+Header Server is Cowboy
+
+Header Content-Type is present
+
+Response body is a JSON
+
+JSON value is a number
+
+Response time is less than 1000ms","1. Responce BODY:
+[
+    {
+        ""bookingid"": '***'-- массив значений подходящих под указанный промежуток
+    }
+]
+
+REsponce Headers:-
+Server:Cowboy
+Content-Type:application/json; charset=utf-8
+
+Status code is 200
+
+Header Server is Cowboy
+
+Header Content-Type is present
+
+Response body is a JSON
+
+JSON value is a number
+
+Response time is less than 1000ms","1. Failed","1. SEND","1. SEND","Test Case (Steps)","Тупицын Максим","2/10/2023 9:54 AM","Other",""
+"T297753","Обновляем текущее бронирование(Базовая авторизация)","Тупицын Максим"," None","C148643","","","92s","","","","","","","","","Postman запущен
+Метод PUT
+URL https://restful-booker.herokuapp.com/booking/{{bookingId}}  (где {{bookingId}} валидный идентификатор бронирования)
+
+Request Headers:
+Content-Type:application/json
+Authorization:Basic YWRtaW46cGFzc3dvcmQxMjM=
+","Smoke","","SMOKE_TEST_RestFul_Booker_Tupitsyn_Maksim(Win11/64)","","R2121","Update_Booking(PUT/PATCH)","0","","Update_Booking(PUT/PATCH)","Passed","","1. Request BODY:
+
+{
+    ""firstname"" : ""Armen"",
+    ""lastname"" : ""Volosatyi"",
+    ""totalprice"" : 333,
+    ""depositpaid"" : false,
+    ""bookingdates"" : {
+        ""checkin"" : ""2022-01-10"",
+        ""checkout"" : ""2023-01-23""
+    },
+    ""additionalneeds"" : ""Lunch""
+}
+2. SEND
+Expected Result:
+Responce BODY:
+{
+    ""firstname"": ""Armen"",
+    ""lastname"": ""Volosatyi"",
+    ""totalprice"": 333,
+    ""depositpaid"": false,
+    ""bookingdates"": {
+        ""checkin"": ""2022-01-10"",
+        ""checkout"": ""2023-01-23""
+    },
+    ""additionalneeds"": ""Lunch""
+}
+
+REsponce Headers:-
+Server:Cowboy
+Content-Type:application/json; charset=utf-8
+
+Status code is 200
+
+Header Server is Cowboy
+
+Header Content-Type is present
+
+Response is a JSON
+
+Response schema is correct
+
+JSON values are correct types
+
+Response time is less than 1000ms
+3. Get Updated Booking {{bookingId}}
+Expected Result:
+Status code is 200
+
+Header Server is Cowboy
+
+Header Content-Type is present
+
+Response is a JSON
+
+Response schema is correct
+
+JSON values are correct types
+
+Validation Responce Body
+
+Response time is less than 1000ms","1. Request BODY:
+
+{
+    ""firstname"" : ""Armen"",
+    ""lastname"" : ""Volosatyi"",
+    ""totalprice"" : 333,
+    ""depositpaid"" : false,
+    ""bookingdates"" : {
+        ""checkin"" : ""2022-01-10"",
+        ""checkout"" : ""2023-01-23""
+    },
+    ""additionalneeds"" : ""Lunch""
+}
+---
+Passed
+2. SEND
+---
+Responce BODY:
+{
+    ""firstname"": ""Armen"",
+    ""lastname"": ""Volosatyi"",
+    ""totalprice"": 333,
+    ""depositpaid"": false,
+    ""bookingdates"": {
+        ""checkin"": ""2022-01-10"",
+        ""checkout"": ""2023-01-23""
+    },
+    ""additionalneeds"": ""Lunch""
+}
+
+REsponce Headers:-
+Server:Cowboy
+Content-Type:application/json; charset=utf-8
+
+Status code is 200
+
+Header Server is Cowboy
+
+Header Content-Type is present
+
+Response is a JSON
+
+Response schema is correct
+
+JSON values are correct types
+
+Response time is less than 1000ms
+---
+![](index.php?/attachments/get/13974)
+---
+Passed
+3. Get Updated Booking {{bookingId}}
+---
+Status code is 200
+
+Header Server is Cowboy
+
+Header Content-Type is present
+
+Response is a JSON
+
+Response schema is correct
+
+JSON values are correct types
+
+Validation Responce Body
+
+Response time is less than 1000ms
+---
+Passed","1. 
+2. ![](index.php?/attachments/get/13974)
+3.","1. 
+2. Responce BODY:
+{
+    ""firstname"": ""Armen"",
+    ""lastname"": ""Volosatyi"",
+    ""totalprice"": 333,
+    ""depositpaid"": false,
+    ""bookingdates"": {
+        ""checkin"": ""2022-01-10"",
+        ""checkout"": ""2023-01-23""
+    },
+    ""additionalneeds"": ""Lunch""
+}
+
+REsponce Headers:-
+Server:Cowboy
+Content-Type:application/json; charset=utf-8
+
+Status code is 200
+
+Header Server is Cowboy
+
+Header Content-Type is present
+
+Response is a JSON
+
+Response schema is correct
+
+JSON values are correct types
+
+Response time is less than 1000ms
+3. Status code is 200
+
+Header Server is Cowboy
+
+Header Content-Type is present
+
+Response is a JSON
+
+Response schema is correct
+
+JSON values are correct types
+
+Validation Responce Body
+
+Response time is less than 1000ms","1. 
+2. Responce BODY:
+{
+    ""firstname"": ""Armen"",
+    ""lastname"": ""Volosatyi"",
+    ""totalprice"": 333,
+    ""depositpaid"": false,
+    ""bookingdates"": {
+        ""checkin"": ""2022-01-10"",
+        ""checkout"": ""2023-01-23""
+    },
+    ""additionalneeds"": ""Lunch""
+}
+
+REsponce Headers:-
+Server:Cowboy
+Content-Type:application/json; charset=utf-8
+
+Status code is 200
+
+Header Server is Cowboy
+
+Header Content-Type is present
+
+Response is a JSON
+
+Response schema is correct
+
+JSON values are correct types
+
+Response time is less than 1000ms
+3. Status code is 200
+
+Header Server is Cowboy
+
+Header Content-Type is present
+
+Response is a JSON
+
+Response schema is correct
+
+JSON values are correct types
+
+Validation Responce Body
+
+Response time is less than 1000ms","1. Passed
+2. Passed
+3. Passed","1. Request BODY:
+
+{
+    ""firstname"" : ""Armen"",
+    ""lastname"" : ""Volosatyi"",
+    ""totalprice"" : 333,
+    ""depositpaid"" : false,
+    ""bookingdates"" : {
+        ""checkin"" : ""2022-01-10"",
+        ""checkout"" : ""2023-01-23""
+    },
+    ""additionalneeds"" : ""Lunch""
+}
+2. SEND
+3. Get Updated Booking {{bookingId}}","1. Request BODY:
+
+{
+    ""firstname"" : ""Armen"",
+    ""lastname"" : ""Volosatyi"",
+    ""totalprice"" : 333,
+    ""depositpaid"" : false,
+    ""bookingdates"" : {
+        ""checkin"" : ""2022-01-10"",
+        ""checkout"" : ""2023-01-23""
+    },
+    ""additionalneeds"" : ""Lunch""
+}
+2. SEND
+3. Get Updated Booking {{bookingId}}","Test Case (Steps)","Тупицын Максим","2/10/2023 9:56 AM","Other","1.0"
+"T297754","Обновляем текущее бронирование(Авторизация с помощью токена(COOKIE))","Тупицын Максим"," None","C148644","","","86s","","","","","","","","","Postman запущен
+Генерируем токен{{token}}
+Метод PUT
+URL https://restful-booker.herokuapp.com/booking/{{bookingId}}(где {{bookingId}} валидный идентификатор бронирования)
+Request Headers:
+Content-Type:application/json
+Cookie:token={{token}}(где {{token}} валидный токен)
+","Smoke","","SMOKE_TEST_RestFul_Booker_Tupitsyn_Maksim(Win11/64)","","R2121","Update_Booking(PUT/PATCH)","0","","Update_Booking(PUT/PATCH)","Passed","","1. Request Body:
+{
+    ""firstname"" : ""Valera"",
+    ""lastname"" : ""Yakuza"",
+    ""totalprice"" : 222,
+    ""depositpaid"" : false,
+    ""bookingdates"" : {
+        ""checkin"" : ""2023-01-01"",
+        ""checkout"" : ""2023-01-23""
+    },
+    ""additionalneeds"" : ""Lunch""
+
+SEND
+Expected Result:
+Responce BODY:
+{
+    ""firstname"": ""Valera"",
+    ""lastname"": ""Yakuza"",
+    ""totalprice"": 222,
+    ""depositpaid"": false,
+    ""bookingdates"": {
+        ""checkin"": ""2023-01-01"",
+        ""checkout"": ""2023-01-23""
+    },
+    ""additionalneeds"": ""Lunch""
+}
+REsponce Headers:-
+Server:Cowboy
+Content-Type:application/json; charset=utf-8
+
+Status code is 200
+
+Header Server is Cowboy
+
+Header Content-Type is present
+
+Response is a JSON
+
+Response schema is correct
+
+JSON values are correct types
+
+Check if lastname is Yakuza
+
+Body is correct
+
+Response time is less than 1000ms
+2. Get Updated Booking {{bookingId}}
+Expected Result:
+Status code is 200
+
+Header Server is Cowboy
+
+Header Content-Type is present
+
+Response is a JSON
+
+Response schema is correct
+
+JSON values are correct types
+
+Validation Responce Body
+
+Response time is less than 1000ms","1. Request Body:
+{
+    ""firstname"" : ""Valera"",
+    ""lastname"" : ""Yakuza"",
+    ""totalprice"" : 222,
+    ""depositpaid"" : false,
+    ""bookingdates"" : {
+        ""checkin"" : ""2023-01-01"",
+        ""checkout"" : ""2023-01-23""
+    },
+    ""additionalneeds"" : ""Lunch""
+
+SEND
+---
+Responce BODY:
+{
+    ""firstname"": ""Valera"",
+    ""lastname"": ""Yakuza"",
+    ""totalprice"": 222,
+    ""depositpaid"": false,
+    ""bookingdates"": {
+        ""checkin"": ""2023-01-01"",
+        ""checkout"": ""2023-01-23""
+    },
+    ""additionalneeds"": ""Lunch""
+}
+REsponce Headers:-
+Server:Cowboy
+Content-Type:application/json; charset=utf-8
+
+Status code is 200
+
+Header Server is Cowboy
+
+Header Content-Type is present
+
+Response is a JSON
+
+Response schema is correct
+
+JSON values are correct types
+
+Check if lastname is Yakuza
+
+Body is correct
+
+Response time is less than 1000ms
+---
+![](index.php?/attachments/get/13976)
+---
+Passed
+2. Get Updated Booking {{bookingId}}
+---
+Status code is 200
+
+Header Server is Cowboy
+
+Header Content-Type is present
+
+Response is a JSON
+
+Response schema is correct
+
+JSON values are correct types
+
+Validation Responce Body
+
+Response time is less than 1000ms
+---
+Passed","1. ![](index.php?/attachments/get/13976)
+2.","1. Responce BODY:
+{
+    ""firstname"": ""Valera"",
+    ""lastname"": ""Yakuza"",
+    ""totalprice"": 222,
+    ""depositpaid"": false,
+    ""bookingdates"": {
+        ""checkin"": ""2023-01-01"",
+        ""checkout"": ""2023-01-23""
+    },
+    ""additionalneeds"": ""Lunch""
+}
+REsponce Headers:-
+Server:Cowboy
+Content-Type:application/json; charset=utf-8
+
+Status code is 200
+
+Header Server is Cowboy
+
+Header Content-Type is present
+
+Response is a JSON
+
+Response schema is correct
+
+JSON values are correct types
+
+Check if lastname is Yakuza
+
+Body is correct
+
+Response time is less than 1000ms
+2. Status code is 200
+
+Header Server is Cowboy
+
+Header Content-Type is present
+
+Response is a JSON
+
+Response schema is correct
+
+JSON values are correct types
+
+Validation Responce Body
+
+Response time is less than 1000ms","1. Responce BODY:
+{
+    ""firstname"": ""Valera"",
+    ""lastname"": ""Yakuza"",
+    ""totalprice"": 222,
+    ""depositpaid"": false,
+    ""bookingdates"": {
+        ""checkin"": ""2023-01-01"",
+        ""checkout"": ""2023-01-23""
+    },
+    ""additionalneeds"": ""Lunch""
+}
+REsponce Headers:-
+Server:Cowboy
+Content-Type:application/json; charset=utf-8
+
+Status code is 200
+
+Header Server is Cowboy
+
+Header Content-Type is present
+
+Response is a JSON
+
+Response schema is correct
+
+JSON values are correct types
+
+Check if lastname is Yakuza
+
+Body is correct
+
+Response time is less than 1000ms
+2. Status code is 200
+
+Header Server is Cowboy
+
+Header Content-Type is present
+
+Response is a JSON
+
+Response schema is correct
+
+JSON values are correct types
+
+Validation Responce Body
+
+Response time is less than 1000ms","1. Passed
+2. Passed","1. Request Body:
+{
+    ""firstname"" : ""Valera"",
+    ""lastname"" : ""Yakuza"",
+    ""totalprice"" : 222,
+    ""depositpaid"" : false,
+    ""bookingdates"" : {
+        ""checkin"" : ""2023-01-01"",
+        ""checkout"" : ""2023-01-23""
+    },
+    ""additionalneeds"" : ""Lunch""
+
+SEND
+2. Get Updated Booking {{bookingId}}","1. Request Body:
+{
+    ""firstname"" : ""Valera"",
+    ""lastname"" : ""Yakuza"",
+    ""totalprice"" : 222,
+    ""depositpaid"" : false,
+    ""bookingdates"" : {
+        ""checkin"" : ""2023-01-01"",
+        ""checkout"" : ""2023-01-23""
+    },
+    ""additionalneeds"" : ""Lunch""
+
+SEND
+2. Get Updated Booking {{bookingId}}","Test Case (Steps)","Тупицын Максим","2/10/2023 9:58 AM","Other","1.0"
+"T297755","Частичное обновление текущего бронирования","Тупицын Максим"," None","C148645","","","100s","","","","","","","","","Postman запущен
+Генерируем токен{{token}}
+Метод PATCH
+URL https://restful-booker.herokuapp.com/booking/{{bookingId}}(где {{bookingId}} валидный идентификатор бронирования)
+Request Headers:
+Content-Type:application/json
+Cookie:token={{token}}(где {{token}} валидный токен)","Smoke","","SMOKE_TEST_RestFul_Booker_Tupitsyn_Maksim(Win11/64)","","R2121","Update_Booking(PUT/PATCH)","0","","Update_Booking(PUT/PATCH)","Passed","","1. Request Body:
+{
+    ""firstname"" : ""Maksim"",
+    ""lastname"" : ""Tupitsyn"",
+    ""additionalneeds"": ""Breakfast in bed""
+}
+2. SEND
+Expected Result:
+Responce body:
+{
+    ""firstname"": ""Maksim"",
+    ""lastname"": ""Tupitsyn"",
+    ""totalprice"": 222,
+    ""depositpaid"": false,
+    ""bookingdates"": {
+        ""checkin"": ""2023-01-01"",
+        ""checkout"": ""2023-01-23""
+    },
+    ""additionalneeds"": ""Breakfast in bed""
+}
+
+REsponce Headers:-
+Server:Cowboy
+Content-Type:application/json; charset=utf-8
+
+Status code is 200
+
+Header Server is Cowboy
+
+Header Content-Type is present
+
+Response is a JSON
+
+Response schema is correct
+
+JSON values are correct types
+
+Check if lastname is Tupitsyn
+
+Body is correct
+
+Response time is less than 1000ms
+3. Get Updated Booking {{bookingId}}
+Expected Result:
+Status code is 200
+
+Header Server is Cowboy
+
+Header Content-Type is present
+
+Response is a JSON
+
+Response schema is correct
+
+JSON values are correct types
+
+Validation Responce Body
+
+Response time is less than 1000ms","1. Request Body:
+{
+    ""firstname"" : ""Maksim"",
+    ""lastname"" : ""Tupitsyn"",
+    ""additionalneeds"": ""Breakfast in bed""
+}
+---
+Passed
+2. SEND
+---
+Responce body:
+{
+    ""firstname"": ""Maksim"",
+    ""lastname"": ""Tupitsyn"",
+    ""totalprice"": 222,
+    ""depositpaid"": false,
+    ""bookingdates"": {
+        ""checkin"": ""2023-01-01"",
+        ""checkout"": ""2023-01-23""
+    },
+    ""additionalneeds"": ""Breakfast in bed""
+}
+
+REsponce Headers:-
+Server:Cowboy
+Content-Type:application/json; charset=utf-8
+
+Status code is 200
+
+Header Server is Cowboy
+
+Header Content-Type is present
+
+Response is a JSON
+
+Response schema is correct
+
+JSON values are correct types
+
+Check if lastname is Tupitsyn
+
+Body is correct
+
+Response time is less than 1000ms
+---
+![](index.php?/attachments/get/13977)
+---
+Passed
+3. Get Updated Booking {{bookingId}}
+---
+Status code is 200
+
+Header Server is Cowboy
+
+Header Content-Type is present
+
+Response is a JSON
+
+Response schema is correct
+
+JSON values are correct types
+
+Validation Responce Body
+
+Response time is less than 1000ms
+---
+Passed","1. 
+2. ![](index.php?/attachments/get/13977)
+3.","1. 
+2. Responce body:
+{
+    ""firstname"": ""Maksim"",
+    ""lastname"": ""Tupitsyn"",
+    ""totalprice"": 222,
+    ""depositpaid"": false,
+    ""bookingdates"": {
+        ""checkin"": ""2023-01-01"",
+        ""checkout"": ""2023-01-23""
+    },
+    ""additionalneeds"": ""Breakfast in bed""
+}
+
+REsponce Headers:-
+Server:Cowboy
+Content-Type:application/json; charset=utf-8
+
+Status code is 200
+
+Header Server is Cowboy
+
+Header Content-Type is present
+
+Response is a JSON
+
+Response schema is correct
+
+JSON values are correct types
+
+Check if lastname is Tupitsyn
+
+Body is correct
+
+Response time is less than 1000ms
+3. Status code is 200
+
+Header Server is Cowboy
+
+Header Content-Type is present
+
+Response is a JSON
+
+Response schema is correct
+
+JSON values are correct types
+
+Validation Responce Body
+
+Response time is less than 1000ms","1. 
+2. Responce body:
+{
+    ""firstname"": ""Maksim"",
+    ""lastname"": ""Tupitsyn"",
+    ""totalprice"": 222,
+    ""depositpaid"": false,
+    ""bookingdates"": {
+        ""checkin"": ""2023-01-01"",
+        ""checkout"": ""2023-01-23""
+    },
+    ""additionalneeds"": ""Breakfast in bed""
+}
+
+REsponce Headers:-
+Server:Cowboy
+Content-Type:application/json; charset=utf-8
+
+Status code is 200
+
+Header Server is Cowboy
+
+Header Content-Type is present
+
+Response is a JSON
+
+Response schema is correct
+
+JSON values are correct types
+
+Check if lastname is Tupitsyn
+
+Body is correct
+
+Response time is less than 1000ms
+3. Status code is 200
+
+Header Server is Cowboy
+
+Header Content-Type is present
+
+Response is a JSON
+
+Response schema is correct
+
+JSON values are correct types
+
+Validation Responce Body
+
+Response time is less than 1000ms","1. Passed
+2. Passed
+3. Passed","1. Request Body:
+{
+    ""firstname"" : ""Maksim"",
+    ""lastname"" : ""Tupitsyn"",
+    ""additionalneeds"": ""Breakfast in bed""
+}
+2. SEND
+3. Get Updated Booking {{bookingId}}","1. Request Body:
+{
+    ""firstname"" : ""Maksim"",
+    ""lastname"" : ""Tupitsyn"",
+    ""additionalneeds"": ""Breakfast in bed""
+}
+2. SEND
+3. Get Updated Booking {{bookingId}}","Test Case (Steps)","Тупицын Максим","2/10/2023 10:00 AM","Other","1.0"
+"T297756","Удаление бронирования","Тупицын Максим"," None","C148646","","","65s","","","","","","","","","Postman запущен
+генерируем токен {{token}}
+Метод DELETE
+URL https://restful-booker.herokuapp.com/booking/{{bookingId}}(где {{bookingId}} валидный идентификатор бронирования)
+Request Headers:
+Content-Type:application/json
+Cookie:token={{token}}(где {{token}} валидный токен)","Smoke","","SMOKE_TEST_RestFul_Booker_Tupitsyn_Maksim(Win11/64)","","R2121","Delete_Booking(DELETE)","0","","Delete_Booking(DELETE)","Passed","","1. SEND
+Expected Result:
+Responce BODY:
+Created
+
+REsponce Headers:-
+Server:Cowboy
+Content-Type:text/plain; charset=utf-8
+
+Status code is 201
+
+Header Server is Cowboy
+
+Header Content-Type is present
+
+Body message is `Created`
+
+Response time is less than 1000ms
+2. Confirm_Delete:
+Get Deleted Booking {{bookingId}}
+
+Expected Result:
+Status code is 404
+
+Header Server is Cowboy
+
+Response time is less than 1000ms","1. SEND
+---
+Responce BODY:
+Created
+
+REsponce Headers:-
+Server:Cowboy
+Content-Type:text/plain; charset=utf-8
+
+Status code is 201
+
+Header Server is Cowboy
+
+Header Content-Type is present
+
+Body message is `Created`
+
+Response time is less than 1000ms
+---
+![](index.php?/attachments/get/13978)
+---
+Passed
+2. Confirm_Delete:
+Get Deleted Booking {{bookingId}}
+
+---
+Status code is 404
+
+Header Server is Cowboy
+
+Response time is less than 1000ms
+---
+Passed","1. ![](index.php?/attachments/get/13978)
+2.","1. Responce BODY:
+Created
+
+REsponce Headers:-
+Server:Cowboy
+Content-Type:text/plain; charset=utf-8
+
+Status code is 201
+
+Header Server is Cowboy
+
+Header Content-Type is present
+
+Body message is `Created`
+
+Response time is less than 1000ms
+2. Status code is 404
+
+Header Server is Cowboy
+
+Response time is less than 1000ms","1. Responce BODY:
+Created
+
+REsponce Headers:-
+Server:Cowboy
+Content-Type:text/plain; charset=utf-8
+
+Status code is 201
+
+Header Server is Cowboy
+
+Header Content-Type is present
+
+Body message is `Created`
+
+Response time is less than 1000ms
+2. Status code is 404
+
+Header Server is Cowboy
+
+Response time is less than 1000ms","1. Passed
+2. Passed","1. SEND
+2. Confirm_Delete:
+Get Deleted Booking {{bookingId}}","1. SEND
+2. Confirm_Delete:
+Get Deleted Booking {{bookingId}}","Test Case (Steps)","Тупицын Максим","2/10/2023 10:02 AM","Other","1.0"
