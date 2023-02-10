@@ -8,4 +8,4 @@
 - [PostMan_Env](https://github.com/MaksimTupitsyn/RestFul_Booker/blob/main/Restful_Booker.postman_environment.json)
 - [Test_Run_Complete](http://178.124.206.46:8000/index.php?/runs/view/2122&group_by=cases:section_id&group_order=asc)
 - [Test_Result_Report]()
-- [Jmeter cases]()
+- [Jmeter cases](https://github.com/MaksimTupitsyn/RestFul_Booker/blob/main/Jmeter_restful_booker.jmx)
